@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!-- ====================================================================== 
+     21.05.2005 19:55:59                                                        
+
+     generic    
+     description
+                   
+     Thomas                                                                
+     ====================================================================== -->
+<project name="JaFP" default="all">
+
+	<description>Java (almost) Functional Programming Library</description>
+
+	<!--
+		Global Properties
+	-->
+
+	<property name="src" location="src" />
+	<property name="src.main" location="${src}/main" />
+	<property name="src.main.java" location="${src.main}/java" />
+	<property name="src.main.fmpp" location="${src.main}/fmpp" />
+	<property name="src.main.fmpp.data" location="${src.main.fmpp}/data" />
+	
+	<property name="gen" location="gen" />
+	<property name="gen.main" location="${gen}/main" />
+	<property name="gen.main.fmpp" location="${gen.main}/fmpp" />
+	
+	<property name="target" location="target" />
+	<property name="target.main" location="${target}/main" />
+	<property name="target.main.java" location="${target.main}/java" />
+	
+	<property name="target.lib" location="${target}/lib" />
+	<property name="lib" location="lib" />
+
+	<!--
+		Tasks Definitions
+	-->
+	
+	<taskdef name="fmpp" classpath="${lib}/fmpp.jar" classname="fmpp.tools.AntTask" />
+
+	
+	<!--
+		Targets
+	 -->
+
+	<!-- ================================= 
+          target: all              
+         ================================= -->
+	<target name="all" depends="jar"
+		description="default">
+	</target>
+
+	<!-- ================================= 
+          target: clean              
+         ================================= -->
+	<target name="clean"
+		description="delete all generated directory trees">
+		<delete dir="${gen}" />
+		<delete dir="${target}" />
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: init                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="init"
+		description="initialize">
+		<!-- Create the time stamp -->
+		<tstamp />
+		<!-- Create the build directory structure used by compile and precompile and jar -->
+		<mkdir dir="${gen.main.fmpp}" />
+		<mkdir dir="${target.main.java}" />
+		<mkdir dir="${target.lib}" />
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: precompile                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="precompile" depends="init"
+		description="process templates">
+		<fmpp 
+			sourceRoot="${src.main.fmpp}"
+			outputRoot="${gen.main.fmpp}"
+			data="tdd(data/fmpp.tdd)"/>
+	</target>
+
+	<!-- ================================= 
+          target: compile              
+         ================================= -->
+    <target name="compile" depends="precompile"
+    	description="compile the source">
+		<!-- Compile the java code from ${gen} and ${src} into ${target} -->
+        <javac
+        	destdir="${target.main.java}"
+        	source="1.5">
+        	<src path="${gen.main.fmpp}" />
+        	<src path="${src.main.java}" />
+        </javac>
+    </target>
+
+	<!-- ================================= 
+          target: jar              
+         ================================= -->
+	<target name="jar" depends="compile"
+		description="generate the .jar file">
+		<!-- Put everything in ${target.main.java} into the jafp.jar file -->
+		<jar
+			jarfile="${target.lib}/jafp.jar"
+			basedir="${target.main.java}" />
+	</target>
+
+</project>
+
