@@ -75,7 +75,7 @@ public class Some<S> extends Option<S> {
     }
 
     @Override
-    public S getOrElse(@SuppressWarnings("unused") Function0<? extends S> alt) {
+    public S getOrElse(Function0<? extends S> alt) {
 
         return this.value;
     }
@@ -90,7 +90,7 @@ public class Some<S> extends Option<S> {
     public boolean equals(Object obj) {
 
         if (this == obj) return true;
-        if (!(obj instanceof Some)) return false;
+        if (!(obj instanceof Some<?>)) return false;
 
         final Some<?> other = (Some<?>)obj;
 

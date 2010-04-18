@@ -80,7 +80,7 @@ final class AdjacentPairList<E, T> extends AbstractList<E> {
         }
         
         @Override
-        public void add(@SuppressWarnings("unused") E e) {
+        public void add(E e) {
 
             throw new UnsupportedOperationException();
         }
@@ -166,7 +166,7 @@ final class AdjacentPairList<E, T> extends AbstractList<E> {
         }
 
         @Override
-        public void set(@SuppressWarnings("unused") E e) {
+        public void set(E e) {
 
             throw new UnsupportedOperationException();
         }

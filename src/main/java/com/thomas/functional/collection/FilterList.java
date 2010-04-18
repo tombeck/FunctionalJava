@@ -177,7 +177,7 @@ final class FilterList<E> extends AbstractList<E> {
         }
 
         @Override
-        public void add(@SuppressWarnings("unused") E e) {
+        public void add(E e) {
 
             throw new UnsupportedOperationException();
         }
@@ -189,7 +189,7 @@ final class FilterList<E> extends AbstractList<E> {
         }
 
         @Override
-        public void set(@SuppressWarnings("unused") E e) {
+        public void set(E e) {
 
             throw new UnsupportedOperationException();
         }
@@ -304,7 +304,7 @@ final class FilterList<E> extends AbstractList<E> {
     }
 
     @Override
-    public boolean addAll(@SuppressWarnings("unused") int index, @SuppressWarnings("unused") Collection<? extends E> c) {
+    public boolean addAll(int index, Collection<? extends E> c) {
 
         throw new UnsupportedOperationException();
     }
@@ -316,7 +316,7 @@ final class FilterList<E> extends AbstractList<E> {
     }
 
     @Override
-    public boolean addAll(@SuppressWarnings("unused") Collection<? extends E> c) {
+    public boolean addAll(Collection<? extends E> c) {
 
         throw new UnsupportedOperationException();
     }
@@ -335,19 +335,19 @@ final class FilterList<E> extends AbstractList<E> {
     }
 
     @Override
-    public boolean remove(@SuppressWarnings("unused") Object o) {
+    public boolean remove(Object o) {
 
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public boolean removeAll(@SuppressWarnings("unused") Collection<?> c) {
+    public boolean removeAll(Collection<?> c) {
 
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public boolean retainAll(@SuppressWarnings("unused") Collection<?> c) {
+    public boolean retainAll(Collection<?> c) {
 
         throw new UnsupportedOperationException();
     }

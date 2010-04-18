@@ -38,7 +38,7 @@ public final class Parameter${i}<R>
 
     @Override
     public R call(<@csv 1..i; k>
-            <#if k = i>R<#else>@SuppressWarnings("unused") Object</#if> arg${k}</@csv>) {
+            <#if k = i>R<#else>Object</#if> arg${k}</@csv>) {
 
         return arg${i};
     }

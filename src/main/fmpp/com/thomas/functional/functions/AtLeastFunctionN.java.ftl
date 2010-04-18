@@ -47,7 +47,7 @@ public abstract class AtLeastFunction${i}<R<#if 0 < i><#list 1..i as j>, T${j}</
 </#if>
 <#if i < max><#list (i + 1)..max as j>
     public R call(<@csv 1..j; k>
-            <#if i < k>@SuppressWarnings("unused") Object<#else>T${k}</#if> arg${k}</@csv>) {
+            <#if i < k>Object<#else>T${k}</#if> arg${k}</@csv>) {
 
         return call(<#if 0 < i><@csv 1..i; k>arg${k}</@csv></#if>);
     }

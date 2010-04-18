@@ -189,12 +189,12 @@ final class ConcatList<E> extends AbstractList<E> {
             throw new UnsupportedOperationException();
         }
 
-        public void set(@SuppressWarnings("unused") E o) {
+        public void set(E o) {
 
             throw new UnsupportedOperationException();
         }
 
-        public void add(@SuppressWarnings("unused") E o) {
+        public void add(E o) {
 
             throw new UnsupportedOperationException();
         }

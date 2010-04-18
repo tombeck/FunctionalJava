@@ -62,7 +62,7 @@ final class IndexedList<E> extends AbstractList<Pair<Integer, E>> {
         }
 
         @Override
-        public void add(@SuppressWarnings("unused")Pair<Integer, E> e) {
+        public void add(Pair<Integer, E> e) {
 
             throw new UnsupportedOperationException();
         }
@@ -114,7 +114,7 @@ final class IndexedList<E> extends AbstractList<Pair<Integer, E>> {
         }
 
         @Override
-        public void set(@SuppressWarnings("unused") Pair<Integer, E> e) {
+        public void set( Pair<Integer, E> e) {
 
             throw new UnsupportedOperationException();
         }

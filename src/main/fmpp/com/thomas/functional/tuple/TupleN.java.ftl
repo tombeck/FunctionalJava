@@ -107,7 +107,7 @@ public class Tuple${i}<<@csv 1..i; j>T${j}</@csv>> extends AbstractList<Object>
     public boolean equals(Object obj) {
     
         if (obj == this) return true;
-        if (!(obj instanceof Tuple${i})) return false;
+        if (!(obj instanceof Tuple${i}<<@csv 1..i>?</@csv>>)) return false;
         
         final Tuple${i}<<@csv 1..i>?</@csv>> other = (Tuple${i}<<@csv 1..i>?</@csv>>)obj;
         
