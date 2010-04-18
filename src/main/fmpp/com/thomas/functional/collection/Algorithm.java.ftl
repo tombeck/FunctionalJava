@@ -1,6 +1,6 @@
 <#include "*/macros/macros.ftl">
 <@pp.dropOutputFile />
-<@pp.changeOutputFile name="Collections.java" />
+<@pp.changeOutputFile name="Algorithm.java" />
 /**
  * $Id$
  *
@@ -52,7 +52,7 @@ import com.thomas.functional.tuple.Tuple${i};
  * @author Thomas
  * @since 07.10.2006
  */
-public final class Collections {
+public final class Algorithm {
 
     public static <E> Collection<E> drop(Collection<E> c, int count) {
         

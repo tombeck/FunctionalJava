@@ -41,7 +41,7 @@ public class Some<S> extends Option<S> {
 
     Some(S value) {
 
-        if (value == null) throw new NullPointerException("Value of some must not be null");
+        if (value == null) throw new NullPointerException("value of some must not be null");
         
         this.value = value;
     }
