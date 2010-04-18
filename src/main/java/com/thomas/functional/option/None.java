@@ -90,7 +90,9 @@ final class None<T> extends Option<T> {
     @Override
     public boolean equals(Object obj) {
 
-        return this == obj;
+        if (this == obj) return true;
+        
+        return obj instanceof None<?>;
     }
 
     @Override
