@@ -7,7 +7,7 @@
                    
      Thomas                                                                
      ====================================================================== -->
-<project name="JaFP" default="all">
+<project name="FunctionalJava" default="all">
 
 	<description>Java (almost) Functional Programming Library</description>
 
@@ -91,7 +91,8 @@
 		<!-- Compile the java code from ${gen} and ${src} into ${target} -->
         <javac
         	destdir="${target.main.java}"
-        	source="1.5">
+        	target="1.6"
+        	source="1.6">
         	<src path="${gen.main.fmpp}" />
         	<src path="${src.main.java}" />
         </javac>
@@ -102,9 +103,9 @@
          ================================= -->
 	<target name="jar" depends="compile"
 		description="generate the .jar file">
-		<!-- Put everything in ${target.main.java} into the jafp.jar file -->
+		<!-- Put everything in ${target.main.java} into the functional.jar file -->
 		<jar
-			jarfile="${target.lib}/jafp.jar"
+			jarfile="${target.lib}/functional.jar"
 			basedir="${target.main.java}" />
 	</target>
 
