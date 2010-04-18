@@ -41,6 +41,8 @@ public class Some<S> extends Option<S> {
 
     Some(S value) {
 
+        if (value == null) throw new NullPointerException("Value of some must not be null");
+        
         this.value = value;
     }
 
@@ -83,7 +85,7 @@ public class Some<S> extends Option<S> {
     @Override
     public int hashCode() {
 
-        return 31 + (this.value == null ? 0 : this.value.hashCode());
+        return 31 + this.value.hashCode();
     }
 
     @Override
@@ -94,7 +96,7 @@ public class Some<S> extends Option<S> {
 
         final Some<?> other = (Some<?>)obj;
 
-        return this.value == null ? other.value == null : this.value.equals(other.value);
+        return this.value.equals(other.value);
     }
 
     @Override
